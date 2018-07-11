@@ -80,6 +80,7 @@ class LinksController < ApplicationController
       params.require(:link).permit(:title, :image, :url, :description)
     end
 
+    #TODO: move this logic to models
     #scrape the link details
     def link_details
       link = LinkThumbnailer.generate(@link.url)

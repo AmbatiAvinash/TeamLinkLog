@@ -42,6 +42,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     ansi (1.5.0)
     arel (8.0.0)
+    ast (2.4.0)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.2)
@@ -63,9 +64,12 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.2)
     crass (1.0.4)
     diff-lcs (1.3)
     erubi (1.7.1)
+    ethon (0.11.0)
+      ffi (>= 1.3.0)
     execjs (2.7.0)
     ffi (1.9.25)
     formatador (0.2.5)
@@ -86,9 +90,23 @@ GEM
       minitest (>= 3.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    image_info (1.1.2)
+      image_size
+      typhoeus
+    image_size (2.0.0)
+    iso8601 (0.9.1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    json (2.1.0)
+    link_thumbnailer (3.3.2)
+      activesupport (>= 3.0)
+      image_info (>= 1.0)
+      json (>= 1.7.7)
+      net-http-persistent (>= 2.9)
+      nokogiri (>= 1.6)
+      rake (>= 0.9)
+      video_info (>= 2.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -110,12 +128,18 @@ GEM
       ruby-progressbar
     multi_json (1.13.1)
     nenv (0.3.0)
+    net-http-persistent (3.0.0)
+      connection_pool (~> 2.2)
+    net_http_timeout_errors (0.3.2)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oga (2.15)
+      ast
+      ruby-ll (~> 2.1)
     pg (1.0.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -169,6 +193,9 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
+    ruby-ll (2.1.2)
+      ansi
+      ast
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
@@ -205,10 +232,16 @@ GEM
     turbolinks (5.1.1)
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
+    typhoeus (1.3.0)
+      ethon (>= 0.9.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.1.14)
       execjs (>= 0.3.0, < 3)
+    video_info (2.7)
+      iso8601 (~> 0.9.1)
+      net_http_timeout_errors (~> 0.3.0)
+      oga (~> 2.7)
     web-console (3.6.2)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -230,6 +263,7 @@ DEPENDENCIES
   guard
   guard-minitest
   jbuilder (~> 2.5)
+  link_thumbnailer
   listen (>= 3.0.5, < 3.2)
   minitest
   minitest-reporters

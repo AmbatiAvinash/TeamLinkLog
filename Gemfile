@@ -44,6 +44,12 @@ group :development, :test do
 
   #Adds support for testing the app using rspec
   gem 'rspec-rails'
+
+  #Adds testing reports
+  gem 'minitest'
+  gem 'minitest-reporters'
+  gem 'guard' 
+  gem 'guard-minitest'
 end
 
 group :development do

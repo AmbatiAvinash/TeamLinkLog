@@ -29,7 +29,6 @@ class LinksController < ApplicationController
 
     #method for scrapping link details from url
     link_details
-   
     respond_to do |format|
       if @link.save
         format.html { redirect_to @link, notice: 'Link was successfully created.' }
@@ -46,7 +45,6 @@ class LinksController < ApplicationController
   def update
     respond_to do |format|
       if @link.update(link_params)
-        
         #method for scrapping link details from url
         link_details
 

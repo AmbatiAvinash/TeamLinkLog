@@ -1,5 +1,8 @@
-<h1>New Link</h1>
 
-<%= render 'form', link: @link %>
+<div class="container">
+  <h1>New Link</h1>
 
-<%= link_to 'Back', links_path, class: 'btn btn-info btn-xs' %>
+  <%= render 'form', link: @link %>
+
+  <%= link_to 'Back', links_path, class: 'btn btn-info btn-xs float-right' %>
+</div>

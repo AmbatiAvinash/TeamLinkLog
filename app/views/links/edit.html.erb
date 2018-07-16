@@ -1,6 +1,9 @@
-<h1>Editing Link</h1>
 
-<%= render 'form', link: @link %>
+<div class="container">
+  <h1>Editing Link</h1>
 
-<%= link_to 'Show', @link %> |
-<%= link_to 'Back', links_path %>
+  <%= render 'form', link: @link %>
+  <br>
+  <%= link_to 'Show', @link %> |
+  <%= link_to 'Back', links_path %>
+</div>

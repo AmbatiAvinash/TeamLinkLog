@@ -1,24 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @link.title %>
-</p>
+<% if false %>
+  <p>
+    <strong>Title:</strong>
+    <%= @link.title %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @link.image %>
-</p>
+  <p>
+    <strong>Image:</strong>
+    <%= @link.image %>
+  </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @link.url %>
-</p>
+  <p>
+    <strong>Url:</strong>
+    <%= @link.url %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @link.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @link.description %>
+  </p>
 
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+  <%= link_to 'Edit', edit_link_path(@link) %> |
+  <%= link_to 'Back', links_path %>
+<% end %>
+
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-2'>
+      <img class="image-fluid" src=<%= @link.image ||= "https://placeimg.com/400/400/tech" %> alt="Card image cap">
+    </div>
+    <div class='col-md-10'>
+      <%= @link.title %> 
+    </div>
+  </div>
+</div>

@@ -26,9 +26,6 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = Link.new(link_params)
-
-    #method for scrapping link details from url
-    link_details
     respond_to do |format|
       if @link.save
         format.html { redirect_to links_path, notice: 'Link was successfully created.' }
@@ -45,9 +42,6 @@ class LinksController < ApplicationController
   def update
     respond_to do |format|
       if @link.update(link_params)
-        #method for scrapping link details from url
-        link_details
-
         format.html { redirect_to links_path, notice: 'Link was successfully updated.' }
         format.json { render :show, status: :ok, location: @link }
       else
@@ -76,17 +70,5 @@ class LinksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
       params.require(:link).permit(:title, :image, :url, :description)
-    end
-
-    #TODO: move this logic to models
-    #scrape the link details
-    def link_details
-      link = LinkThumbnailer.generate(@link.url)
-      title = link.title
-      description = link.description
-      @image = link.images.first.src.to_s
-      @link.title = title if @link.title.blank?
-      @link.description = description  if @link.description.blank?
-      @link.image = @image if @link.image.blank?
     end
 end

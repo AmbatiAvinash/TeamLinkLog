@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<%#
-FIXME: Change the table format
-TODO: Add bootstrap to the table
-%>
 <div class='container'>
   <h1>Links</h1>
   <%= link_to 'New Link', new_link_path, class: 'btn btn-success' %>
@@ -13,7 +9,7 @@ TODO: Add bootstrap to the table
     <% @links.each do |link| %>
       <div class='col-md-4 d-flex align-items-center'>
         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src=<%=link.image%> alt="Card image cap">
+          <img class="card-img-top" src=<%=link.image ||= "https://placeimg.com/400/400/tech" %> alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= truncate(link.title, :length => 25, :omission => '...') %></h5>
             <p class="card-text"><%= truncate(link.description, :length => 50, :omission => '...') %></p>

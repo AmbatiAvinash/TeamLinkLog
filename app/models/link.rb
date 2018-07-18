@@ -2,6 +2,9 @@ class Link < ApplicationRecord
   validates :url, presence: true
   before_create :link_details
 
+
+
+
   private
 
   def link_details

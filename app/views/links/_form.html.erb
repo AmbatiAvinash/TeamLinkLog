@@ -12,6 +12,20 @@
     <% end %>
 
     <div class="field form-group">
+      <%= form.label "Url*"%>
+      <%= form.text_field :url, id: :link_url , class:'form-control'%>
+    </div>
+
+    <div class="field form-group ">
+      <%= form.label "Favorite"%>
+      <div class='radio-inline'>
+        <%= link.favorite %>
+        <%= form.radio_button :favorite, true, options={:checked=> link.favorite == 'true' ? true : false} %>Yes
+        <%= form.radio_button :favorite, false%>No
+      </div>
+    </div>
+
+    <div class="field form-group">
       <%= form.label :title %>
       <%= form.text_field :title, id: :link_title, class:'form-control'%>
     </div>
@@ -19,11 +33,6 @@
     <div class="field form-group">
       <%= form.label "Image url" %>
       <%= form.text_field :image, id: :link_image , class:'form-control'%>
-    </div>
-
-    <div class="field form-group">
-      <%= form.label "Url*"%>
-      <%= form.text_field :url, id: :link_url , class:'form-control'%>
     </div>
 
     <div class="field form-group">

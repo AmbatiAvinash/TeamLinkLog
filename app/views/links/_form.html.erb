@@ -19,10 +19,14 @@
     <div class="field form-group ">
       <%= form.label "Favorite"%>
       <div class='radio-inline'>
-        <%= link.favorite %>
-        <%= form.radio_button :favorite, true, options={:checked=> link.favorite == 'true' ? true : false} %>Yes
+        <%= form.radio_button :favorite, true, options={:checked=> link.favorite == true ? true : false} %>Yes
         <%= form.radio_button :favorite, false%>No
       </div>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label "Link Tags" %>
+      <%= form.text_field :all_tags, placeholder: "Tags separated with comma",  id: :link_tags, class:'form-control'%>
     </div>
 
     <div class="field form-group">

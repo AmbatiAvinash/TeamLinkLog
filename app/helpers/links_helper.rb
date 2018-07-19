@@ -6,6 +6,6 @@ module LinksHelper
 
   def all_tags()
     tags = Tag.all.pluck(:name)
-    tags.map{|tag| link_to tag.strip, tag_path(tag.strip) }.join(", ") 
+    tags.map{|tag| link_to tag.strip, tag_path(tag.strip) } 
   end
 end

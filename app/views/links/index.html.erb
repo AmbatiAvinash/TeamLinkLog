@@ -2,25 +2,26 @@
 
 <div class='container'>
   <h1>Links</h1>
-  <%=raw all_tags()%>
   <%= link_to 'New Link', new_link_path, class: 'btn btn-success' %>
+  <br>
+  <br>
+  <%= will_paginate @links, class:'pull-right' %>
   <br>
   <br>
   <div class='row'>
     <div class='col-md-2'>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
+            <b class='nav-link'>Tags</b>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <%= link_to 'All Tags', links_path, class:"nav-link"%>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
+          <% all_tags().each do |tag| %>
+            <li class="nav-item">
+              <span class="nav-link"><%= tag %></span>
+            </li>
+          <%end%>
         </ul>
     </div>
     <div class='col-md-10 d-flex align-items-center'>
@@ -42,5 +43,4 @@
       </div>
     </div>
   </div>
-  <%= will_paginate @links %>
 </div>

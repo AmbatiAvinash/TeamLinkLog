@@ -3,5 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .card{
-  margin-bottom: 10em;
+  margin-bottom: 3em;
+}
+.pull-right{
+  float: right !important;
+}
+
+.nav{
+  .nav-item{
+    .nav-link{
+      a{
+        // background-color: lightgrey;
+        // padding: 0.5em;
+        // color: black;
+      }
+    }
+  }
 }

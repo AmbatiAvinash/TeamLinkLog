@@ -1,7 +1,7 @@
 class Link < ApplicationRecord
 
   has_many :taggings
-  has_many :tags, through: :taggings
+  has_many :tags, through: :taggings, :dependent => :destroy
 
   validates :url, presence: true
   before_create :link_details

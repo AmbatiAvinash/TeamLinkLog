@@ -6,7 +6,7 @@ script:
 before_deploy: "echo 'Deploy ready'"
 deploy:
   provider: heroku
-  api_key: heroku-api
+  api_key: $heroku-api
   app: link-log 
 
 after_deploy: "echo 'Deploy Done'"

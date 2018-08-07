@@ -3,4 +3,10 @@ rvm:
   - 2.4.1
 script:
   - bundle install
-  - bundle exec rspec
+before_deploy: "echo 'Deploy ready'"
+deploy:
+  provider: heroku
+  api_key: $heroku-api
+  app: link-log 
+
+after_deploy: "echo 'Deploy Done'"
